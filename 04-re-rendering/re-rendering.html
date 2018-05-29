@@ -7,17 +7,28 @@
     const parent = document.getElementById('parent')
 
     function updateTime() {
-        const time = new Date().toLocaleTimeString()        
-        const child = (
-            <div> 
+        const time = new Date().toLocaleTimeString()
+        // JS Way     
+        const child = 
+            `<div> 
             Current Time: 
-                <input value = {time} />
-                <input value = {time} />
-            </div>
-            )
-            ReactDOM.render(child, parent)
+                <input value = ${time} />
+                <input value = ${time} />
+            </div>`
+            
+            parent.innerHTML = child
+
+        // React way  
+    //     const child = (
+    //         <div> 
+    //         Current Time: 
+    //             <input value = {time} />
+    //             <input value = {time} />
+    //         </div>
+    //         )
+    //         ReactDOM.render(child, parent)
     }
-    
+
     updateTime() 
     setInterval(updateTime, 1000)
 </script>
