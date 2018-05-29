@@ -1,0 +1,26 @@
+<div id='parent'> </div>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+    const parent = document.getElementById('parent')
+    // const child = document.createElement('div')
+    // child.textContent = 'Hello world'
+    // child.className = 'container'
+    // parent.appendChild(child) 
+
+    // React way 
+    // const child = React.createElement('div', { className: 'child' }, 'Hello World')
+    
+    // More ergonomic using jsx syntax.
+    const content = "Hello WOrld"
+    const clas = "container"
+
+    const props = {
+        className: clas,
+        children: content
+    }
+    const child = <div {...props}/>
+    ReactDOM.render(child, parent)
+</script>
