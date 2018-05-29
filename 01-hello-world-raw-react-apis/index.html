@@ -3,8 +3,15 @@
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script type="text/javascript">
     const parent = document.getElementById('parent')
-    const child = document.createElement('div')
-    child.textContent = 'Hello world'
-    child.className = 'container'
-    parent.appendChild(child) 
+    // const child = document.createElement('div')
+    // child.textContent = 'Hello world'
+    // child.className = 'container'
+    // parent.appendChild(child) 
+
+    // React way
+
+    const child = React.createElement('div', { className: 'child' }, 'Hello World')
+    console.log(child)
+
+    ReactDOM.render(child, parent)
 </script>
